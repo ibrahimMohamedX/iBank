@@ -6,7 +6,7 @@ class ColorsData {
   static const prim3 = Color(0xffA8A3D7);
   static const prim4 = Color(0xffF2F1F9);
   static const dark = Color(0xff343434);
-  static const gray = Color(0xffCACACA);
+  static const gray = Color(0xff979797);
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
 }

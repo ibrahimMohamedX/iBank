@@ -1,10 +1,15 @@
 class AssetsData {
   // png
+  static const String Pavatar = 'assets/images/Avatar.png';
+  static const String Pviza_card = 'assets/images/viza_card.png';
 
   //svg
   static const String Slogin = 'assets/images/login.svg';
   static const String Ssignup = 'assets/images/signup.svg';
+  static const String SchangedPass_success =
+      'assets/images/changedpass_success.svg';
   // lottie
+  static const String Llogo_animation = 'assets/images/logo_animation.json';
 }
 
 class IconsData {
@@ -19,6 +24,7 @@ class IconsData {
   static const String Stransfer = 'assets/icons/transfer.svg';
   static const String Swallet = 'assets/icons/wallet.svg';
   static const String Swithdraw = 'assets/icons/withdraw.svg';
+  static const String Sviza = 'assets/icons/viza.svg';
 }
 
 class ShapesData {

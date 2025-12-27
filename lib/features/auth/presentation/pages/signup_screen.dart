@@ -24,12 +24,24 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: canpop(context) ? 0 : 20,
+        leading: canpop(context)
+            ? IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios_new,
+
+                  color: ColorsData.whiteColor,
+                ),
+                onPressed: () {
+                  pop(context);
+                },
+              )
+            : null,
         backgroundColor: ColorsData.prim1,
         title: const Text(
           'Sign Up',
           style: TextStyle(
             color: ColorsData.whiteColor,
-            fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -121,9 +133,10 @@ class _SignupScreenState extends State<SignupScreen> {
                           SizedBox(height: 20),
                           // main button
                           MainButton(
-                            text: 'Sign In',
+                            text: 'Sign Up',
                             ontap: () {
                               //! go to home screen
+                              pushAndRemoveUntil(context, RoutesData.home);
                             },
                           ),
                         ],
@@ -132,7 +145,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     SizedBox(height: 40),
                     AuthFooterLink(
                       desc: "Have an account?  ",
-                      linkText: 'Sign In',
+                      linkText: 'Log In',
                       ontap: () {
                         //! go to sign up screen
                         pushWithReplacement(context, RoutesData.login);
