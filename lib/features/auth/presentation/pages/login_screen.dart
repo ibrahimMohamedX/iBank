@@ -22,12 +22,21 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: canpop(context) ? 0 : 20,
+        leading: canpop(context)
+            ? IconButton(
+                icon: Icon(Icons.arrow_back_ios_new),
+                color: ColorsData.whiteColor,
+                onPressed: () {
+                  pop(context);
+                },
+              )
+            : null,
         backgroundColor: ColorsData.prim1,
         title: const Text(
-          'Sign in',
+          'Log In',
           style: TextStyle(
             color: ColorsData.whiteColor,
-            fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -91,6 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: InkWell(
                               onTap: () {
                                 //! go to forgot password screen
+                                pushTo(context, RoutesData.forgotpassword);
                               },
                               child: Text(
                                 'Forgot Password?',
@@ -104,9 +114,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           SizedBox(height: 40),
                           // main button
                           MainButton(
-                            text: 'Sign In',
+                            text: 'Log In',
                             ontap: () {
                               //! go to home screen
+                              pushAndRemoveUntil(context, RoutesData.home);
                             },
                           ),
                         ],
