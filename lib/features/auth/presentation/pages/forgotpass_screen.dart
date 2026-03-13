@@ -19,7 +19,7 @@ class _ForgotpassScreenState extends State<ForgotpassScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PasswordAppBar(context, title: 'Forgot Password'),
+      appBar: MainAppBar(context, title: 'Forgot Password'),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

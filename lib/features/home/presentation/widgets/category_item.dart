@@ -3,17 +3,21 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ibank/core/consts/colors_data.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, required this.icon, required this.title});
+  const CategoryItem({
+    super.key,
+    required this.icon,
+    required this.title,
+    this.ontap,
+  });
 
   final String icon;
   final String title;
+  final VoidCallback? ontap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        //! go to respective page
-      },
+      onTap: ontap,
       child: Container(
         width: 100,
         height: 100,

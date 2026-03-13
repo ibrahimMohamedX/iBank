@@ -41,7 +41,7 @@ class _MainTextFieldState extends State<MainTextField> {
                   color: ColorsData.gray,
                 ),
               )
-            : widget.suffixIcon ?? null,
+            : widget.suffixIcon,
         labelText: widget.labelText,
         floatingLabelStyle: TextStyle(color: ColorsData.dark),
         labelStyle: TextStyle(color: ColorsData.gray),

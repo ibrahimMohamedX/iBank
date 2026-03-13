@@ -42,7 +42,7 @@ class _VerifycodeScreenState extends State<VerifycodeScreen> {
           ),
         ),
       ),
-      appBar: PasswordAppBar(context, title: 'Verify Code'),
+      appBar: MainAppBar(context, title: 'Verify Code'),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

@@ -8,6 +8,7 @@ class AssetsData {
   static const String Ssignup = 'assets/images/signup.svg';
   static const String SchangedPass_success =
       'assets/images/changedpass_success.svg';
+  static const String Stransfer_success = 'assets/icons/transfer_success.svg';
   // lottie
   static const String Llogo_animation = 'assets/images/logo_animation.json';
 }

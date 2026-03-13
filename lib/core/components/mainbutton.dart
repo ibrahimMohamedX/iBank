@@ -8,19 +8,23 @@ class MainButton extends StatelessWidget {
     this.ontap,
     this.bgcolor,
     this.txtcolor,
+    this.width,
   });
 
   final String text;
   final VoidCallback? ontap;
   final Color? bgcolor;
   final Color? txtcolor;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: ontap,
       child: Container(
-        width: double.infinity,
+        width: width != null
+            ? (MediaQuery.of(context).size.width * width!)
+            : double.infinity,
         height: 56,
         decoration: BoxDecoration(
           color: bgcolor ?? ColorsData.prim1,

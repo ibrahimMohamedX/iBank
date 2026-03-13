@@ -21,7 +21,7 @@ class _ChangepassScreendState extends State<ChangepassScreend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PasswordAppBar(context, title: 'Change Password'),
+      appBar: MainAppBar(context, title: 'Change Password'),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),

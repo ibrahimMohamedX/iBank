@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ibank/core/consts/assets_data.dart';
 import 'package:ibank/core/consts/colors_data.dart';
+import 'package:ibank/core/routes/navigation_data.dart';
+import 'package:ibank/core/routes/routes_data.dart';
 import 'package:ibank/features/home/data/category_model.dart';
 import 'package:ibank/features/home/presentation/widgets/category_item.dart';
 import 'package:ibank/features/home/presentation/widgets/visa_card.dart';
@@ -21,30 +23,33 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: ColorsData.prim1,
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            spacing: 15,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: ColorsData.whiteColor, width: 2),
-                  color: ColorsData.prim4,
-                ),
+          child: InkWell(
+            onTap: () => pushTo(context, RoutesData.profile),
+            child: Row(
+              spacing: 15,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: ColorsData.whiteColor, width: 2),
+                    color: ColorsData.prim4,
+                  ),
 
-                child: Image.asset(AssetsData.Pavatar, fit: BoxFit.cover),
-              ),
-              Text(
-                'Hi, John Smith',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: ColorsData.whiteColor,
-                  fontWeight: FontWeight.w600,
+                  child: Image.asset(AssetsData.Pavatar, fit: BoxFit.cover),
                 ),
-              ),
-            ],
+                Text(
+                  'Hi, John Smith',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: ColorsData.whiteColor,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -81,6 +86,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemCount: CategoryModel.categories.length,
                       itemBuilder: (context, index) {
                         return CategoryItem(
+                          ontap: () {
+                            if (index == 1) {
+                              pushTo(context, RoutesData.transfer);
+                            }
+                          },
                           icon: CategoryModel.categories[index].caticon,
                           title: CategoryModel.categories[index].catname,
                         );
